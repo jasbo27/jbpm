@@ -22,8 +22,12 @@ public class RuleSetNodeHandler extends AbstractNodeHandler {
         	ruleSetNode.setRuleFlowGroup(ruleFlowGroup);
         }
         String parallel = element.getAttribute("parallel");
-        if (parallel != null && parallel.length() > 0) {
-            ruleSetNode.setParallel(parallel);
+        if (parallel != null && "true".equals(parallel)) {
+            ruleSetNode.setParallel(true);
+        }
+        String maxThreadCount = element.getAttribute("maxThreadCount");
+        if (maxThreadCount != null && maxThreadCount.length() > 0) {
+            ruleSetNode.setMaxThreadCount(Integer.valueOf(maxThreadCount));
         }
 
     }

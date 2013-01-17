@@ -29,7 +29,9 @@ public class RuleSetNode extends StateBasedNode {
 
     private String ruleFlowGroup;
 
-    private String parallel;
+    private boolean parallel = false;
+
+    private int maxThreadCount = 0;
 
     public void setRuleFlowGroup(final String ruleFlowGroup) {
         this.ruleFlowGroup = ruleFlowGroup;
@@ -39,12 +41,20 @@ public class RuleSetNode extends StateBasedNode {
         return this.ruleFlowGroup;
     }
 
-    public String getParallel() {
+    public boolean isParallel() {
         return parallel;
     }
 
-    public void setParallel(String parallel) {
+    public void setParallel(boolean parallel) {
         this.parallel = parallel;
+    }
+
+    public int getMaxThreadCount() {
+        return maxThreadCount;
+    }
+
+    public void setMaxThreadCount(int maxThreadCount) {
+        this.maxThreadCount = maxThreadCount;
     }
 
     public void validateAddIncomingConnection(final String type, final Connection connection) {

@@ -43,7 +43,7 @@ public class RuleSetNodeInstance extends StateBasedNodeInstance implements Event
         }
         addRuleSetListener();
         ((InternalAgenda) getProcessInstance().getKnowledgeRuntime().getAgenda())
-        	.activateRuleFlowGroup( getRuleSetNode().getRuleFlowGroup(), getProcessInstance().getId(), getUniqueId() );
+        	.activateRuleFlowGroup( getRuleSetNode().getRuleFlowGroup(), getProcessInstance().getId(), getUniqueId(), getRuleSetNode().isParallel(), getRuleSetNode().getMaxThreadCount() );
     }
 
     public void addEventListeners() {
