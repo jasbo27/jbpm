@@ -29,12 +29,22 @@ public class RuleSetNode extends StateBasedNode {
 
     private String ruleFlowGroup;
 
+    private String parallel;
+
     public void setRuleFlowGroup(final String ruleFlowGroup) {
         this.ruleFlowGroup = ruleFlowGroup;
     }
 
     public String getRuleFlowGroup() {
         return this.ruleFlowGroup;
+    }
+
+    public String getParallel() {
+        return parallel;
+    }
+
+    public void setParallel(String parallel) {
+        this.parallel = parallel;
     }
 
     public void validateAddIncomingConnection(final String type, final Connection connection) {
