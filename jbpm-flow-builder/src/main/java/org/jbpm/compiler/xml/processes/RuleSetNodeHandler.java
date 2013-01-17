@@ -43,7 +43,11 @@ public class RuleSetNodeHandler extends AbstractNodeHandler {
         String ruleFlowGroup = ruleSetNode.getRuleFlowGroup();
         if (ruleFlowGroup != null) {
             xmlDump.append("ruleFlowGroup=\"" + ruleFlowGroup + "\" ");
+
         }
+        xmlDump.append("parallel=\"" + ruleSetNode.isParallel() + "\" ");
+        xmlDump.append("maxThreadCount=\"" + ruleSetNode.getMaxThreadCount() + "\" ");
+
         if (ruleSetNode.getTimers() != null || (includeMeta && containsMetaData(ruleSetNode))) {
             xmlDump.append(">\n");
             if (ruleSetNode.getTimers() != null) {
