@@ -21,6 +21,11 @@ public class RuleSetNodeHandler extends AbstractNodeHandler {
         if (ruleFlowGroup != null && ruleFlowGroup.length() > 0) {
         	ruleSetNode.setRuleFlowGroup(ruleFlowGroup);
         }
+        String parallel = element.getAttribute("parallel");
+        if (parallel != null && parallel.length() > 0) {
+            ruleSetNode.setParallel(parallel);
+        }
+
     }
 
     @SuppressWarnings("unchecked")
